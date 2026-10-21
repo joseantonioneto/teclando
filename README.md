@@ -1,5 +1,7 @@
 # Teclando — Jogo de Digitação
 
+> 🎮 Jogue online: **https://joseantonioneto.github.io/teclando/**
+
 Jogo de digitação para o navegador, feito com **React 19 + Vite + Tailwind CSS v4**.
 O jogo mostra teclas, palavras ou frases na tela; cada acerto vira pontos, e a partida
 acompanha tempo, precisão (%) e velocidade (WPM) em tempo real.
