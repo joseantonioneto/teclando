@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", "Cascadia Code", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --animate-shake: shake 0.3s ease-in-out;
+  --animate-pop: pop 0.25s ease-out;
+  --animate-flash: flash 0.5s ease-out forwards;
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-3px); }
+  }
+
+  @keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes flash {
+    from { background-color: rgb(244 63 94 / 0.9); color: white; border-color: rgb(251 113 133); }
+    to { background-color: rgb(255 255 255 / 0.05); }
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-3xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-500 px-5 py-3 font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:bg-indigo-400 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-5 py-3 font-semibold text-zinc-200 transition hover:bg-white/10 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300;
+  }
+
+  kbd {
+    @apply rounded-md border border-white/20 bg-white/10 px-1.5 py-0.5 font-mono text-xs text-zinc-300;
+  }
+}
+
+body {
+  min-height: 100vh;
+  color: #f4f4f5;
+  background:
+    radial-gradient(900px 500px at 50% -10%, rgb(99 102 241 / 0.18), transparent 70%),
+    radial-gradient(700px 400px at 90% 110%, rgb(16 185 129 / 0.1), transparent 70%),
+    #09090b;
+  -webkit-font-smoothing: antialiased;
+}
